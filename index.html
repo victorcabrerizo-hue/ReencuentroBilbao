@@ -20,7 +20,7 @@
 }
 html{height:100%;background:var(--bg)}
 body{
-  min-height:112svh;
+  min-height:115svh;
   background:var(--bg);
   color:var(--white);
   font-family:'Cormorant Garamond',Georgia,serif;
@@ -30,7 +30,7 @@ body{
 }
 .hero{
   position:relative;
-  min-height:100svh;
+  min-height:115svh;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -41,7 +41,7 @@ body{
 }
 .bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .bg img{
-  width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block;
+  width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;
   filter:brightness(.56) contrast(1.1) saturate(1.08) sepia(.08);
   transform:scale(1.025);
 }
@@ -133,19 +133,24 @@ body{
 
 
 
+
+
+
 .despedida-frase{
-  margin:2.8rem auto 1.2rem;
-  max-width:360px;
-  font-family:'Great Vibes', cursive;
-  font-size:clamp(2.05rem,7vw,3.8rem);
+  display:block !important;
+  position:relative;
+  z-index:5;
+  margin:3rem auto 1.3rem auto;
+  max-width:390px;
+  padding:0 .8rem;
+  font-family:'Great Vibes', cursive !important;
+  font-size:clamp(2.2rem,7vw,4rem);
   font-weight:400;
-  color:#f7dada;
+  color:#ffe1e1 !important;
   text-align:center;
-  line-height:1.25;
+  line-height:1.22;
   letter-spacing:.01em;
-  text-shadow:
-    0 2px 10px rgba(0,0,0,.55),
-    0 0 26px rgba(196,82,106,.30);
+  text-shadow:0 3px 14px rgba(0,0,0,.75), 0 0 30px rgba(196,82,106,.45);
 }
 
 </style>
@@ -191,7 +196,12 @@ body{
     </div>
   </div>
 
-  <div class="madrid" aria-hidden="true">
+  
+<div class="despedida-frase">
+  La despedida no fue perfecta…<br>
+  Hagamos que el reencuentro lo sea.
+</div>
+<div class="madrid" aria-hidden="true">
     <div class="skyline">
       <svg viewBox="0 0 1000 220" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -209,7 +219,6 @@ body{
     </div>
     <div class="madrid-text">De Madrid <span>al Cielo</span></div>
   </div>
-<div class="despedida-frase">La despedida no fue perfecta…<br>Hagamos que el reencuentro lo sea.</div>
 <div class="madrid-cielo">De Madrid al Cielo</div>
 </section>
 
