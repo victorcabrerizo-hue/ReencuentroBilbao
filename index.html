@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Cristina & Víctor · Cuenta atrás</title>
 <style>
   * { box-sizing: border-box; }
@@ -364,7 +364,257 @@
     .watercolor-wrap { padding: 16px; min-height: 300px; }
     .watercolor-wrap img, .small-photo { min-height: 300px; }
   }
+
+/* --- iPhone / mobile-first polish --- */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+main {
+  overflow: hidden;
+}
+
+.hero {
+  min-height: 100svh;
+  padding-top: env(safe-area-inset-top);
+}
+
+.hero-content {
+  padding: max(28px, env(safe-area-inset-top)) 18px 34px;
+}
+
+.countdown div,
+.journey-item,
+.promise-card,
+.card {
+  -webkit-backdrop-filter: blur(10px);
+}
+
+button,
+a,
+.countdown div {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  body {
+    background:
+      radial-gradient(circle at top, rgba(255, 177, 108, .2), transparent 18rem),
+      linear-gradient(180deg, #fff3df 0%, #ffe7cf 46%, #fffaf4 100%);
+  }
+
+  section,
+  footer {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .hero {
+    min-height: 100svh;
+    align-items: end;
+  }
+
+  .hero::before {
+    background-position: center center;
+    transform: scale(1.06);
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(180deg, rgba(32,18,24,.1) 0%, rgba(32,18,24,.28) 34%, rgba(32,18,24,.82) 100%),
+      radial-gradient(circle at 72% 18%, rgba(255,174,64,.26), transparent 30%);
+  }
+
+  .heart-line {
+    font-size: 1.7rem;
+    margin-bottom: 4px;
+  }
+
+  .names {
+    font-size: clamp(3rem, 16vw, 4.8rem);
+    line-height: .92;
+    letter-spacing: -0.04em;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    margin: 16px auto 20px;
+  }
+
+  .count-label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .countdown {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .countdown div {
+    border-radius: 16px;
+    padding: 13px 5px 12px;
+    min-width: 0;
+  }
+
+  .countdown span {
+    font-size: clamp(1.55rem, 9vw, 2.35rem);
+  }
+
+  .countdown small {
+    font-size: .54rem;
+    letter-spacing: .06em;
+    margin-top: 5px;
+  }
+
+  .hero-note {
+    font-size: .96rem;
+    line-height: 1.5;
+    max-width: 320px;
+  }
+
+  .intro {
+    padding: 54px 0 20px;
+  }
+
+  h2 {
+    font-size: clamp(2.15rem, 11vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .ornament {
+    margin-bottom: 14px;
+  }
+
+  .intro p,
+  .plans-intro {
+    font-size: 1.02rem;
+    line-height: 1.68;
+  }
+
+  .route {
+    gap: 22px;
+    padding: 28px 0;
+  }
+
+  .card,
+  .card.reverse {
+    border-radius: 28px;
+  }
+
+  .card-body {
+    padding: 28px 22px 32px;
+  }
+
+  h3 {
+    font-size: clamp(2rem, 12vw, 3rem);
+    line-height: 1.02;
+  }
+
+  .step {
+    font-size: .68rem;
+  }
+
+  .card-body p:last-child {
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+
+  .watercolor-wrap {
+    padding: 12px;
+    min-height: 255px;
+  }
+
+  .watercolor-wrap img,
+  .small-photo {
+    min-height: 255px;
+    border-radius: 22px;
+  }
+
+  .small-photo {
+    aspect-ratio: 4 / 3;
+  }
+
+  .story-plans {
+    padding: 48px 0 68px;
+  }
+
+  .journey-line {
+    margin: 26px auto 28px;
+    gap: 16px;
+  }
+
+  .journey-item {
+    padding: 22px 18px 20px;
+    border-radius: 26px;
+  }
+
+  .journey-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 1.85rem;
+    margin-bottom: 12px;
+  }
+
+  .journey-item h4 {
+    font-size: 1.45rem;
+  }
+
+  .journey-item p {
+    font-size: .98rem;
+  }
+
+  .promise-card {
+    margin-top: 28px;
+    padding: 26px 20px;
+    border-radius: 28px;
+  }
+
+  .promise-card p {
+    font-size: clamp(1.35rem, 7vw, 1.8rem);
+    line-height: 1.42;
+  }
+}
+
+@media (max-width: 380px) {
+  .countdown {
+    gap: 5px;
+  }
+
+  .countdown div {
+    padding: 11px 3px 10px;
+    border-radius: 14px;
+  }
+
+  .countdown small {
+    font-size: .49rem;
+  }
+
+  .hero-note {
+    font-size: .9rem;
+  }
+}
+
 </style>
+
+<meta name="theme-color" content="#fff4e2" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no" />
+
 </head>
 <body>
   <main>
@@ -388,7 +638,7 @@
 
     
 <section class="intro love-letter">
-  <h2>Continua lo nuestro</h2>
+  <h2>Empieza lo nuestro</h2>
   <div class="ornament">— ♡ —</div>
   <p>
     No es solo una cuenta atrás. Es la espera antes de volver a mirarnos de cerca,
@@ -464,7 +714,7 @@
   </main>
 
 <script>
-  const target = new Date("2026-06-18T19:30:00+02:00").getTime();
+  const target = new Date(2026, 5, 18, 19, 30, 0).getTime();
 
   function pad(value) {
     return String(value).padStart(2, "0");
